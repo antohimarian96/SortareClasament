@@ -4,7 +4,47 @@ using System.Text;
 
 namespace FootballRankingWithClasses
 {
-    class FootballRanking
+    public class FootballRanking
     {
+        private readonly FootballClub[] club;
+
+        public FootballRanking(FootballClub[] club)
+        {
+            for (int i = 0; i < club.Length; i++)
+            {
+                this.club[i] = club[i];
+            }
+        }
+
+        public FootballClub[] AddStageResults(FootballClub[] stageResult)
+        {
+            for (int i = 0; i < club.Length; i++)
+            {
+                club[i].AddPoints(stageResult[i]);
+            }
+            FootballClub aux;
+            for (int i = 0; i < club.Length; i++)
+            {
+                for (int j = 0; j < club.Length - 1; j++)
+                {
+                    if (club[j].CompareTo(club[j + 1]))
+                    {
+                        
+                        aux = club[j];
+                        club[j] = club[j + 1];
+                        club[j + 1] = aux;
+                    }
+                }
+            }
+            return club;
+        }
+
+        public string[] Print()
+        {
+            string[] result = new string[club.Length];
+            for (int i = 0; i < club.Length; i++)
+                result[i] = result[i] + club[i].GetResult();
+            return result;
+        }
     }
 }
