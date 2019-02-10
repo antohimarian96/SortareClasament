@@ -7,7 +7,7 @@ namespace FootballRankingWithClasses
     public class FootballClub
     {
         private readonly string name;
-        private readonly int points;
+        private  int points;
 
         public FootballClub(string name, int points)
         {
@@ -15,18 +15,16 @@ namespace FootballRankingWithClasses
             this.points = points;
         }
 
-        public bool CompareTo(FootballClub that)
+        public bool LessThan(FootballClub that)
         {
             if (points < that.points)
                 return true;
             return false;
         }
 
-        public int AddPoints(FootballClub that)
+        public void AddPoints(int stagePoints)
         {
-            int result = 0;
-            result = points + that.points;
-            return result;
+            points = points + stagePoints;
         }
 
         public string GetResult()

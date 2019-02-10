@@ -16,7 +16,7 @@ namespace FootballRankingWithClasses
             }
         }
 
-        public FootballClub[] AddStageResults(FootballClub[] stageResult)
+        public void AddStageResults(int[] stageResult)
         {
             for (int i = 0; i < club.Length; i++)
             {
@@ -27,7 +27,7 @@ namespace FootballRankingWithClasses
             {
                 for (int j = 0; j < club.Length - 1; j++)
                 {
-                    if (club[j].CompareTo(club[j + 1]))
+                    if (club[j].LessThan(club[j + 1]))
                     {
                         
                         aux = club[j];
@@ -36,10 +36,9 @@ namespace FootballRankingWithClasses
                     }
                 }
             }
-            return club;
         }
 
-        public string[] Print()
+        public string[] GetResult()
         {
             string[] result = new string[club.Length];
             for (int i = 0; i < club.Length; i++)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JSON_TextValidationWithClasses
+namespace FootballRankingWithClasses
 {
     class Program
     {
