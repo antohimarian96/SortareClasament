@@ -1,19 +1,37 @@
-using FootballRankingWithClasses;
-using System;
-using Xunit;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace FootballRankingTest
+namespace FootballRankingWithClasses
 {
-    public class FootballRankingTest
+    public class FootballClub
     {
+        public readonly string name;
+        public  int points;
 
-        [Fact]
-        public void Test1()
+        public FootballClub(string name, int points)
         {
-            var initialRanking = new FootballRanking(new FootballClub[] { new FootballClub("Steaua", 34), new FootballClub("Dinamo", 30) });
-            var secondRanking = new FootballRanking(new FootballClub[] { new FootballClub("Steaua", 35), new FootballClub("Dinamo", 33) });
-            initialRanking.AddStageResults(new int[] { 1, 3 });
-            Assert.Equal(secondRanking,initialRanking);
+            this.name = name;
+            this.points = points;
+        }
+
+        public bool LessThan(FootballClub that)
+        {
+            if (points < that.points)
+                return true;
+            return false;
+        }
+
+        public void AddPoints(int stagePoints)
+        {
+            points = points + stagePoints;
+        }
+
+        public string GetResult()
+        {
+            string result;
+            result = name + Convert.ToString(points);
+            return result;
         }
     }
 }

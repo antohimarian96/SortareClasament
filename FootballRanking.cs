@@ -6,10 +6,11 @@ namespace FootballRankingWithClasses
 {
     public class FootballRanking
     {
-        private readonly FootballClub[] club;
+        public FootballClub[] club = new FootballClub[] { };
 
         public FootballRanking(FootballClub[] club)
         {
+            this.club = new FootballClub[club.Length];
             for (int i = 0; i < club.Length; i++)
             {
                 this.club[i] = club[i];
