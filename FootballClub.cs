@@ -15,11 +15,14 @@ namespace FootballRankingWithClasses
             this.points = points;
         }
 
+        public bool CheckClubName(string clubName)
+        {
+            return name == clubName;
+        }
+
         public bool LessThan(FootballClub that)
         {
-            if (points < that.points)
-                return true;
-            return false;
+            return points < that.points;
         }
 
         public void AddPoints(int stagePoints)
