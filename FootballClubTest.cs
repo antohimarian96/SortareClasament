@@ -12,7 +12,7 @@ namespace FootballRankingTest
         {
             var initialRanking = new FootballRanking(new FootballClub[] { new FootballClub("Steaua", 34), new FootballClub("Dinamo", 30) });
             var secondRanking = new FootballRanking(new FootballClub[] { new FootballClub("Steaua", 37), new FootballClub("Dinamo", 30) });
-            initialRanking.AddStageResults(new StageResult[] { new StageResult("Steaua", "Dinamo", 2, 1) });           
+            initialRanking.AddStageResult(new StageResult("Steaua", "Dinamo", 2, 1));           
             Assert.Equal(initialRanking.club[0].points, secondRanking.club[0].points);
             Assert.Equal(initialRanking.club[0].name, secondRanking.club[0].name);
             Assert.Equal(initialRanking.club[1].points, secondRanking.club[1].points);

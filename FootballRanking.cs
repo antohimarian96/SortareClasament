@@ -7,7 +7,6 @@ namespace FootballRankingWithClasses
     public class FootballRanking
     {
         public FootballClub[] club;
-        public StageResult[] results;
 
         public FootballRanking(FootballClub[] club)
         {
@@ -18,13 +17,9 @@ namespace FootballRankingWithClasses
             }
         }
 
-        public void AddStageResults(StageResult[] results)
+        public void AddStageResult(StageResult result)
         {
-            results = new StageResult[club.Length / 2];
-            for (int i = 0; i < results.Length; i++)
-            {
-                UpdatePoints(results[i]);
-            }
+            UpdatePoints(result);
             SortRanking();
         }
 
@@ -35,9 +30,7 @@ namespace FootballRankingWithClasses
                 result = 1;
             for (int i = 0; i < club.Length; i++)
             {
-                if (stage.ComparePoints() && club[i].CheckClubName(stage.GetFirstTeamName()))
-                    club[i].AddPoints(result);
-                if (!stage.ComparePoints() && club[i].CheckClubName(stage.GetSecondTeamName()))
+                if (club[i].CheckClubName(stage.GetWinner()))
                     club[i].AddPoints(result);
                 else
                     club[i].AddPoints(result);

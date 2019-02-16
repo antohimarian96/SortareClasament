@@ -19,23 +19,17 @@ namespace FootballRankingWithClasses
             this.secondTeamScore = secondTeamScore;
         }
 
-        public bool ComparePoints()
-        {
-            return firstTeamScore > secondTeamScore;
-        }
-
         public bool CheckIfEqual()
         {
             return firstTeamScore == secondTeamScore;
         }
-        public string GetFirstTeamName()
+       
+        public string GetWinner()
         {
-            return firstTeamName;
-        }
-
-        public string GetSecondTeamName()
-        {
-            return secondTeamName;
+            if (firstTeamScore > secondTeamScore)
+                return firstTeamName;
+            else
+                return secondTeamName;
         }
     }
 }
