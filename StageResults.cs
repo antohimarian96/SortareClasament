@@ -19,11 +19,21 @@ namespace FootballRankingWithClasses
             this.secondTeamScore = secondTeamScore;
         }
 
+        public string GetFirstTeamName()
+        {
+            return firstTeamName;
+        }
+
+        public string GetSecondTeamName()
+        {
+            return secondTeamName;
+        }
+
         public bool CheckIfEqual()
         {
             return firstTeamScore == secondTeamScore;
         }
-       
+
         public string GetWinner()
         {
             if (firstTeamScore > secondTeamScore)

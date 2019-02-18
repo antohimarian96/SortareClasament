@@ -26,14 +26,16 @@ namespace FootballRankingWithClasses
         private void UpdatePoints(StageResult stage)
         {
             int result = 3;
-           if(stage.CheckIfEqual())
-                result = 1;
             for (int i = 0; i < club.Length; i++)
             {
                 if (club[i].CheckClubName(stage.GetWinner()))
                     club[i].AddPoints(result);
-                else
+                if (stage.CheckIfEqual() && (club[i].CheckClubName(stage.GetFirstTeamName()) || club[i].CheckClubName(stage.GetFirstTeamName())))
+                {
+                    result = 1;
                     club[i].AddPoints(result);
+                }
+
             }
         }
         private void SortRanking()

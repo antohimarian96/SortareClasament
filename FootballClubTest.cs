@@ -19,13 +19,13 @@ namespace FootballRankingTest
             Assert.Equal(initialRanking.club[1].name, secondRanking.club[1].name);
         }
 
-        /*[Fact]
+        [Fact]
         public void AddStageResultForManyClubs()
         {
             var initialRanking = new FootballRanking(new FootballClub[] { new FootballClub("Steaua", 34), new FootballClub("Dinamo", 30), new FootballClub("Viitorul",20), new FootballClub("CFR",19)});
             var secondRanking = new FootballRanking(new FootballClub[] { new FootballClub("Steaua", 35), new FootballClub("Dinamo", 31), new FootballClub("CFR", 22), new FootballClub("Viitorul", 20) });
-            initialRanking.AddStageResults("Steaua","Dinamo",1,1);
-            initialRanking.AddStageResults("CFR","Viitorul", 2, 0);
+            initialRanking.AddStageResult(new StageResult("Steaua","Dinamo",1,1));
+            initialRanking.AddStageResult(new StageResult("CFR","Viitorul", 2, 0));
             Assert.Equal(initialRanking.club[0].points, secondRanking.club[0].points);
             Assert.Equal(initialRanking.club[0].name, secondRanking.club[0].name);
             Assert.Equal(initialRanking.club[1].points, secondRanking.club[1].points);
@@ -34,6 +34,6 @@ namespace FootballRankingTest
             Assert.Equal(initialRanking.club[2].name, secondRanking.club[2].name);
             Assert.Equal(initialRanking.club[3].points, secondRanking.club[3].points);
             Assert.Equal(initialRanking.club[3].name, secondRanking.club[3].name);
-        }*/
+        }
     }
 }
